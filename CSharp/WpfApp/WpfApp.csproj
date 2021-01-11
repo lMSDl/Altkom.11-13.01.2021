@@ -57,11 +57,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\CustomCommand.cs" />
     <Compile Include="Converters\DateToAgeConverter.cs" />
     <Compile Include="ViewModels\StudentsViewModel.cs" />
+    <Compile Include="ViewModels\TeacherDialogViewModel.cs" />
     <Compile Include="ViewModels\TeachersViewModel.cs" />
     <Compile Include="Views\StudentsView.xaml.cs">
       <DependentUpon>StudentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeacherDialogView.xaml.cs">
+      <DependentUpon>TeacherDialogView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TeachersView.xaml.cs">
       <DependentUpon>TeachersView.xaml</DependentUpon>
@@ -81,6 +86,10 @@
     <Page Include="Views\StudentsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TeacherDialogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TeachersView.xaml">
       <SubType>Designer</SubType>

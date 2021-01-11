@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Teacher
+    public class Teacher : ICloneable
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -15,5 +15,10 @@ namespace Models
         public Gender Gender { get; set; }
 
         public string Specialization { get; set; }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
     }
 }

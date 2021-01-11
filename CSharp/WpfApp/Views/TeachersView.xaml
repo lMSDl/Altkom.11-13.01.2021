@@ -16,8 +16,15 @@
     <!--<UserControl.Resources>
         <converters:DateToAgeConverter x:Key="DateToAge"/>
     </UserControl.Resources>-->
-    
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+            <Button Content="{x:Static prop:Resources.Delete}" Command="{Binding DeleteCommand}" />
+            <Button Content="{x:Static prop:Resources.Add}" Command="{Binding AddCommand}"/>
+            <Button Content="{x:Static prop:Resources.Edit}" Command="{Binding EditCommand}"/>
+        </StackPanel>
+        
     <DataGrid ItemsSource="{Binding Teachers}"
+              SelectedItem="{Binding SelectedTeacher}"
               AutoGenerateColumns="False"
               IsReadOnly="True">
         <DataGrid.Columns>
@@ -29,4 +36,5 @@
             <DataGridTextColumn Header="{x:Static prop:Resources.Specialization}" Binding="{Binding Specialization}"/>
         </DataGrid.Columns>
     </DataGrid>
+    </DockPanel>
 </UserControl>
