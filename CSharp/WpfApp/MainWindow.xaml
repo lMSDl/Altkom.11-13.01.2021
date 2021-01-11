@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
+        xmlns:views="clr-namespace:WpfApp.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <DockPanel Background="Gray">
+
+    <views:TeachersView/>
+
+    <!--<DockPanel Background="Gray">
         <TextBox DockPanel.Dock="Bottom" Margin="10">EditBox</TextBox>
         <TextBox DockPanel.Dock="Top" Margin="10">EditBox</TextBox>
         <Grid Background="DarkGray" Margin="10">
@@ -21,5 +25,5 @@
                 <Label Background="Blue" Margin="10">Label</Label>
             </StackPanel>
         </Grid>
-    </DockPanel>
+    </DockPanel>-->
 </Window>

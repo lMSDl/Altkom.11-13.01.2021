@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="WpfApp.Views.TeachersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp.Views"
+             xmlns:vm="clr-namespace:WpfApp.ViewModels"
+             xmlns:prop="clr-namespace:WpfApp.Properties"
+             xmlns:converters="clr-namespace:WpfApp.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <vm:TeachersViewModel/>
+    </UserControl.DataContext>
+
+    <!--<UserControl.Resources>
+        <converters:DateToAgeConverter x:Key="DateToAge"/>
+    </UserControl.Resources>-->
+    
+    <DataGrid ItemsSource="{Binding Teachers}"
+              AutoGenerateColumns="False"
+              IsReadOnly="True">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="{x:Static prop:Resources.FirstName}" Binding="{Binding FirstName}"/>
+            <DataGridTextColumn Header="{x:Static prop:Resources.LastName}" Binding="{Binding LastName}"/>
+            <!--<DataGridTextColumn Header="{x:Static prop:Resources.Age}" Binding="{Binding BirthDate, Converter={StaticResource DateToAge}}"/>-->
+            <DataGridTextColumn Header="{x:Static prop:Resources.Age}" Binding="{Binding BirthDate, Converter={converters:DateToAgeConverter}}"/>
+            <DataGridTextColumn Header="{x:Static prop:Resources.Gender}" Binding="{Binding Gender}"/>
+            <DataGridTextColumn Header="{x:Static prop:Resources.Specialization}" Binding="{Binding Specialization}"/>
+        </DataGrid.Columns>
+    </DataGrid>
+</UserControl>
