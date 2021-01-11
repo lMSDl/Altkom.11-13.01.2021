@@ -6,7 +6,61 @@
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <Button DockPanel.Dock="Left">Button L</Button>
+        <Button DockPanel.Dock="Bottom">Button B</Button>
+        <Button DockPanel.Dock="Right">Button R</Button>
+        <Button DockPanel.Dock="Top">Button T</Button>
+        <Button DockPanel.Dock="Left">Button L</Button>
+        <Button DockPanel.Dock="Top">Button T</Button>  
+        <Button DockPanel.Dock="Left">Button L</Button>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="3">Button 1</Button>
+            <Button Grid.Column="1" Grid.Row="2">Button 2</Button>
+            <Button Grid.Column="2" Grid.Row="1">Button 3</Button>
+            <Button Grid.Column="3" Grid.Row="0">Button 4</Button>
+
+            <Viewbox  Grid.Column="0" Grid.Row="2" Stretch="Fill">
+                <Button>VB Button</Button>
+            </Viewbox>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal">
+
+            <Button>Button</Button>
+            <Button>Button</Button>
+            <Button>Button</Button>
+            <Button>Button</Button>
+
+        </StackPanel>
+        <WrapPanel Orientation="Vertical">
+
+
+            <Label>Test label</Label>
+            <TextBox/>
+            <Button>Button</Button>
+            <Button>Button</Button>
+            <Button>Button</Button>
+            <Button>Button</Button>
+            <Button>Button</Button> 
+        </WrapPanel>
+        <Canvas Background="Black">
+            <Button Canvas.Left="50" Canvas.Top="50">Button</Button>
+            <Rectangle Canvas.Top="150" Canvas.Right="25" Width="50" Height=" 50" Fill="Aqua"/>
+        </Canvas>
+    </DockPanel>
 </Window>
