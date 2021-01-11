@@ -46,6 +46,7 @@
     <Compile Include="Delegates\DelegateExample.cs" />
     <Compile Include="Delegates\EventExample.cs" />
     <Compile Include="Delegates\MulticastDelegateExample.cs" />
+    <Compile Include="LambdaExpression\LambdaExamples.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
