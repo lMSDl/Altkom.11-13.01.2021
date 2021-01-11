@@ -126,6 +126,9 @@
   <data name="Gender" xml:space="preserve">
     <value>Płeć</value>
   </data>
+  <data name="IndexNumber" xml:space="preserve">
+    <value>Numer indeksu</value>
+  </data>
   <data name="LastName" xml:space="preserve">
     <value>Nazwisko</value>
   </data>

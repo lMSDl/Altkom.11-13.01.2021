@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <views:TeachersView/>
+    <!--<views:TeachersView/>-->
+    <views:StudentsView/>
 
     <!--<DockPanel Background="Gray">
         <TextBox DockPanel.Dock="Bottom" Margin="10">EditBox</TextBox>

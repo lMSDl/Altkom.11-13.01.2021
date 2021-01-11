@@ -88,6 +88,15 @@ namespace WpfApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Numer indeksu.
+        /// </summary>
+        public static string IndexNumber {
+            get {
+                return ResourceManager.GetString("IndexNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nazwisko.
         /// </summary>
         public static string LastName {
