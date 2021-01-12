@@ -153,4 +153,10 @@
   <data name="Specialization" xml:space="preserve">
     <value>Specializacja</value>
   </data>
+  <data name="Students" xml:space="preserve">
+    <value>Studenci</value>
+  </data>
+  <data name="Teachers" xml:space="preserve">
+    <value>Nauczyciele</value>
+  </data>
 </root>

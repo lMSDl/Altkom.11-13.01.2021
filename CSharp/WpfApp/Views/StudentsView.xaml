@@ -13,16 +13,24 @@
         <vm:StudentsViewModel/>
     </UserControl.DataContext>
 
-    <DataGrid ItemsSource="{Binding Students}"
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+            <Button Content="{x:Static prop:Resources.Delete}" Command="{Binding DeleteCommand}" />
+            <Button Content="{x:Static prop:Resources.Add}" Command="{Binding AddCommand}"/>
+            <Button Content="{x:Static prop:Resources.Edit}" Command="{Binding EditCommand}"/>
+        </StackPanel>
+
+        <DataGrid ItemsSource="{Binding People}"
+              SelectedItem="{Binding SelectedPerson}"
               AutoGenerateColumns="False"
-              ColumnWidth="*"
               IsReadOnly="True">
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="{x:Static prop:Resources.FirstName}" Binding="{Binding FirstName}"/>
-            <DataGridTextColumn Header="{x:Static prop:Resources.LastName}" Binding="{Binding LastName}"/>
-            <DataGridTextColumn Header="{x:Static prop:Resources.Age}" Binding="{Binding BirthDate, Converter={converters:DateToAgeConverter}}"/>
-            <DataGridTextColumn Header="{x:Static prop:Resources.Gender}" Binding="{Binding Gender}"/>
-            <DataGridTextColumn Header="{x:Static prop:Resources.IndexNumber}" Binding="{Binding IndexNumber}"/>
-        </DataGrid.Columns>
-    </DataGrid>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static prop:Resources.FirstName}" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="{x:Static prop:Resources.LastName}" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="{x:Static prop:Resources.Age}" Binding="{Binding BirthDate, Converter={converters:DateToAgeConverter}}"/>
+                <DataGridTextColumn Header="{x:Static prop:Resources.Gender}" Binding="{Binding Gender}"/>
+                <DataGridTextColumn Header="{x:Static prop:Resources.IndexNumber}" Binding="{Binding IndexNumber}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
 </UserControl>

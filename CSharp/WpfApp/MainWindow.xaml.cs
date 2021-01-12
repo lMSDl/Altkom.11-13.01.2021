@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp.Views;
 
 namespace WpfApp
 {
@@ -23,6 +24,23 @@ namespace WpfApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private readonly UserControl _teachers = new TeachersView();
+        private readonly UserControl _students = new StudentsView();
+
+        private void ToggleButton_Teachers_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(_teachers);
+            ToggleButton_Teachers.IsChecked = true;
+            ToggleButton_Students.IsChecked = false;
+        }
+
+        private void ToggleButton_Students_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(_students);
+            ToggleButton_Teachers.IsChecked = false;
+            ToggleButton_Students.IsChecked = true;
         }
     }
 }

@@ -59,14 +59,16 @@
     </ApplicationDefinition>
     <Compile Include="Commands\CustomCommand.cs" />
     <Compile Include="Converters\DateToAgeConverter.cs" />
+    <Compile Include="Converters\HasPropertyToVisibilityConverter.cs" />
+    <Compile Include="ViewModels\PersonDialogViewModel.cs" />
     <Compile Include="ViewModels\StudentsViewModel.cs" />
-    <Compile Include="ViewModels\TeacherDialogViewModel.cs" />
+    <Compile Include="ViewModels\PeopleViewModel.cs" />
     <Compile Include="ViewModels\TeachersViewModel.cs" />
     <Compile Include="Views\StudentsView.xaml.cs">
       <DependentUpon>StudentsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TeacherDialogView.xaml.cs">
-      <DependentUpon>TeacherDialogView.xaml</DependentUpon>
+    <Compile Include="Views\PersonDialogView.xaml.cs">
+      <DependentUpon>PersonDialogView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TeachersView.xaml.cs">
       <DependentUpon>TeachersView.xaml</DependentUpon>
@@ -87,7 +89,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\TeacherDialogView.xaml">
+    <Page Include="Views\PersonDialogView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

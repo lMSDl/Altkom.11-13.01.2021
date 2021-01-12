@@ -6,14 +6,8 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Student
+    public class Student : Person
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-
-        public DateTime BirthDate { get; set; }
-        public Gender Gender { get; set; }
-
         public int IndexNumber { get; set; }
     }
 }

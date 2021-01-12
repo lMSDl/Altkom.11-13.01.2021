@@ -10,9 +10,9 @@ using WpfApp.Commands;
 
 namespace WpfApp.ViewModels
 {
-    public class TeacherDialogViewModel
+    public class PersonDialogViewModel
     {
-        public Teacher Teacher { get; set; }
+        public Person Person { get; set; }
         public ICommand OkCommand => new CustomCommand(x => ((Window)x).DialogResult = true); 
     }
 }

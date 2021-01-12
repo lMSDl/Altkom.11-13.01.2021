@@ -167,5 +167,23 @@ namespace WpfApp.Properties {
                 return ResourceManager.GetString("Specialization", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Studenci.
+        /// </summary>
+        public static string Students {
+            get {
+                return ResourceManager.GetString("Students", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nauczyciele.
+        /// </summary>
+        public static string Teachers {
+            get {
+                return ResourceManager.GetString("Teachers", resourceCulture);
+            }
+        }
     }
 }

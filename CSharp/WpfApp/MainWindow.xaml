@@ -5,12 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         xmlns:views="clr-namespace:WpfApp.Views"
+        xmlns:resx="clr-namespace:WpfApp.Properties"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <!--<views:TeachersView/>-->
-    <views:StudentsView/>
-
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left">
+            <ToggleButton x:Name="ToggleButton_Teachers" 
+                          Content="{x:Static resx:Resources.Teachers}"
+                          Click="ToggleButton_Teachers_Click"
+                          />
+            <ToggleButton x:Name="ToggleButton_Students"
+                          Content="{x:Static resx:Resources.Students}"
+                          Click="ToggleButton_Students_Click"
+                          />
+        </StackPanel>
+        <Frame DockPanel.Dock="Right"
+               NavigationUIVisibility="Hidden"
+               x:Name="Frame"/>
+    </DockPanel>
+    
+    
     <!--<DockPanel Background="Gray">
         <TextBox DockPanel.Dock="Bottom" Margin="10">EditBox</TextBox>
         <TextBox DockPanel.Dock="Top" Margin="10">EditBox</TextBox>

@@ -1,4 +1,4 @@
-﻿<Window x:Class="WpfApp.Views.TeacherDialogView"
+﻿<Window x:Class="WpfApp.Views.PersonDialogView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,9 +7,10 @@
         xmlns:local="clr-namespace:WpfApp.Views"
         xmlns:models="clr-namespace:Models;assembly=Models"
         xmlns:resx="clr-namespace:WpfApp.Properties"
+        xmlns:converters="clr-namespace:WpfApp.Converters"
         mc:Ignorable="d"
         x:Name="DialogWindow"
-        Title="TeacherDialogView" Height="450" Width="800">
+        Title="PersonDialogView" Height="450" Width="800">
 
     <Window.Resources>
         <ObjectDataProvider x:Key="genderEnum"
@@ -33,20 +34,31 @@
 
         <StackPanel Orientation="Vertical" >
             <Label Content="{x:Static resx:Resources.FirstName}"/>
-            <TextBox Text="{Binding Teacher.FirstName}"/>
+            <TextBox Text="{Binding Person.FirstName}"/>
 
             <Label Content="{x:Static resx:Resources.LastName}"/>
-            <TextBox Text="{Binding Teacher.LastName}"/>
+            <TextBox Text="{Binding Person.LastName}"/>
 
             <Label Content="{x:Static resx:Resources.BirthDate}"/>
-            <DatePicker SelectedDate="{Binding Teacher.BirthDate}"/>
+            <DatePicker SelectedDate="{Binding Person.BirthDate}"/>
 
             <Label Content="{x:Static resx:Resources.Gender}"/>
-            <ComboBox SelectedItem="{Binding Teacher.Gender}"
+            <ComboBox SelectedItem="{Binding Person.Gender}"
                       ItemsSource="{Binding Source={StaticResource genderEnum}}"/>
 
-            <Label Content="{x:Static resx:Resources.Specialization}"/>
-            <TextBox Text="{Binding Teacher.Specialization}"/>
+            <Label Content="{x:Static resx:Resources.Specialization}"
+                   Visibility="{Binding Person, Converter={converters:HasPropertyToVisibilityConverter PropertyName=Specialization}}"
+                     />
+            <TextBox Text="{Binding Person.Specialization}"
+                     Visibility="{Binding Person, Converter={converters:HasPropertyToVisibilityConverter PropertyName=Specialization}}"
+                     />
+
+            <Label Content="{x:Static resx:Resources.IndexNumber}"
+                   Visibility="{Binding Person, Converter={converters:HasPropertyToVisibilityConverter PropertyName=IndexNumber}}"
+                     />
+            <TextBox Text="{Binding Person.IndexNumber}"
+                     Visibility="{Binding Person, Converter={converters:HasPropertyToVisibilityConverter PropertyName=IndexNumber}}"
+                     />
 
         </StackPanel>
     </DockPanel>

@@ -19,11 +19,11 @@ namespace WpfApp.Views
     /// <summary>
     /// Interaction logic for TeacherDialogView.xaml
     /// </summary>
-    public partial class TeacherDialogView : Window
+    public partial class PersonDialogView : Window
     {
-        public TeacherDialogView(Teacher teacher)
+        public PersonDialogView(Person person)
         {
-            DataContext = new TeacherDialogViewModel { Teacher = teacher };
+            DataContext = new PersonDialogViewModel { Person = person };
             InitializeComponent();
         }
     }
