@@ -12,7 +12,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            var example = new LambdaExamples();
+            var example = new LinqExample();
 
             example.Test();
             Console.ReadKey();
