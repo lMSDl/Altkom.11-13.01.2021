@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace DAL.Configurations
 {
-    public class TeacherConfiguration : PersonConfiguration<Teacher>
+    public class PersonConfiguration<T> : EntityTypeConfiguration<T> where T : Person
     {
-        public TeacherConfiguration()
+        public PersonConfiguration()
         {
-            Property(x => x.Specialization).IsRequired().HasMaxLength(15);
-            Ignore(x => x.FakeBool);
+            Property(x => x.FirstName).IsRequired();
+            Property(x => x.LastName).IsRequired();
         }
     }
 }
