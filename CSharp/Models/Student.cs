@@ -12,5 +12,8 @@ namespace Models
     public class Student : Person
     {
         public int IndexNumber { get; set; }
+
+        public int? Class_Id { get; set; }
+        public Class Class { get; set; }
     }
 }

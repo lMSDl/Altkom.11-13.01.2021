@@ -21,7 +21,7 @@ namespace DAL
         {
             modelBuilder.Configurations.Add(new TeacherConfiguration());
             modelBuilder.Configurations.Add(new StudentConfiguration());
-
+            modelBuilder.Configurations.Add(new ClassConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }

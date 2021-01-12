@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\ClassConfiguration.cs" />
     <Compile Include="Configurations\PersonConfiguration.cs" />
     <Compile Include="Configurations\StudentConfiguration.cs" />
     <Compile Include="Configurations\TeacherConfiguration.cs" />
@@ -62,6 +63,10 @@
     <Compile Include="Migrations\202101121241465_AddStudent.cs" />
     <Compile Include="Migrations\202101121241465_AddStudent.designer.cs">
       <DependentUpon>202101121241465_AddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101121301070_AddClasses.cs" />
+    <Compile Include="Migrations\202101121301070_AddClasses.designer.cs">
+      <DependentUpon>202101121301070_AddClasses.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101121241465_AddStudent.resx">
       <DependentUpon>202101121241465_AddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101121301070_AddClasses.resx">
+      <DependentUpon>202101121301070_AddClasses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
