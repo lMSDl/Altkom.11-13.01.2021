@@ -70,6 +70,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DbTeachersService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -79,6 +80,10 @@
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{13741250-B3CC-4B26-A146-F784425B7B6F}</Project>
       <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services.Interfaces\Services.Interfaces.csproj">
+      <Project>{349A4F2F-03F5-4A07-8353-E661668E4D83}</Project>
+      <Name>Services.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

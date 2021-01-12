@@ -1,4 +1,6 @@
-﻿using Models;
+﻿using DAL.Services;
+using Models;
+using Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,19 +13,21 @@ using WpfApp.Views;
 
 namespace WpfApp.ViewModels
 {
-    public class TeachersViewModel : PeopleViewModel
+    public class TeachersViewModel : PeopleViewModel<Teacher>
     {
-        protected override Person CreatePerson()
+        protected override ICrudService<Teacher> Service => new DbTeachersService();
+
+        protected override Teacher CreatePerson()
         {
             return new Teacher();
         }
 
-        protected override ObservableCollection<Person> InitPeople()
-        {
-            return new ObservableCollection<Person> {
-                new Teacher() { FirstName = "Ewa", LastName = "Ewowska", BirthDate = new DateTime(1983, 1, 24), Gender = Gender.Female, Specialization = "Cooking" } ,
-                new Teacher() { FirstName = "Maciek", LastName = "Maćkowski", BirthDate = new DateTime(1990, 7, 12), Gender = Gender.Male, Specialization = "Writer" }
-            };
-        }
+        //protected override ObservableCollection<Person> InitPeople()
+        //{
+        //    return new ObservableCollection<Person> {
+        //        new Teacher() { FirstName = "Ewa", LastName = "Ewowska", BirthDate = new DateTime(1983, 1, 24), Gender = Gender.Female, Specialization = "Cooking" } ,
+        //        new Teacher() { FirstName = "Maciek", LastName = "Maćkowski", BirthDate = new DateTime(1990, 7, 12), Gender = Gender.Male, Specialization = "Writer" }
+        //    };
+        //}
     }
 }
