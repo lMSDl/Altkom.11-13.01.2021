@@ -67,7 +67,7 @@
             <Label Content="{x:Static resx:Resources.IndexNumber}"
                    Visibility="{Binding Person, Converter={converters:HasPropertyToVisibilityConverter PropertyName=IndexNumber}}"
                      />
-            <TextBox Text="{Binding Person.IndexNumber}"
+            <TextBox Text="{Binding Person.IndexNumber, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"
                      Visibility="{Binding Person, Converter={converters:HasPropertyToVisibilityConverter PropertyName=IndexNumber}}"
                      />
 

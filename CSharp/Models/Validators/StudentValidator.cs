@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Models.Validators
 {
-    public class TeacherValidator : PersonValidator<Teacher>
+    public class StudentValidator : PersonValidator<Student>
     {
-        public TeacherValidator()
+        public StudentValidator()
         {
-            RuleFor(x => x.Specialization).Length(1, 15).NotNull();
+            RuleFor(x => x.IndexNumber).GreaterThanOrEqualTo(100000).LessThanOrEqualTo(999999);
         }
     }
 }
