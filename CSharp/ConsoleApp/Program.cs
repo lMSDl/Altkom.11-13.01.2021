@@ -1,4 +1,5 @@
 using ConsoleApp.Delegates;
+using ConsoleApp.Indexers;
 using ConsoleApp.LambdaExpression;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            var example = new LinqExample();
+            var example = new IndexerExample();
 
             example.Test();
             Console.ReadKey();
