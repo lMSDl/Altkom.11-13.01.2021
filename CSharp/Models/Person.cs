@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public abstract class Person : Validatable, ICloneable
+    public abstract class Person : Entity, ICloneable
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

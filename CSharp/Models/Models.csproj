@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\EnumTypeConverter.cs" />
+    <Compile Include="Entity.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

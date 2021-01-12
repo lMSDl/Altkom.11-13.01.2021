@@ -12,5 +12,7 @@ namespace Models
     public class Teacher : Person
     {
         public string Specialization { get; set; }
+
+        public bool FakeBool { get; set; }
     }
 }
