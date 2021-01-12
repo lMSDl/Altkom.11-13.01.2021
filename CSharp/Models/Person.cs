@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public abstract class Person : ICloneable
+    public abstract class Person : Validatable, ICloneable
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
         public DateTime BirthDate { get; set; }
-        public Gender Gender { get; set; }
+        public Gender Gender { get; set; } = (Gender)3;
 
         public object Clone()
         {

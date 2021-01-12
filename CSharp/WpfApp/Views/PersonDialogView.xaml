@@ -20,6 +20,16 @@
                 <x:Type TypeName="models:Gender"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+
+        <Style TargetType="Control">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError"
+                         Value="True">
+                    <Setter Property="ToolTip"
+                            Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors).CurrentItem.ErrorContent}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
 
     <DockPanel Margin="15">
@@ -34,22 +44,23 @@
 
         <StackPanel Orientation="Vertical" >
             <Label Content="{x:Static resx:Resources.FirstName}"/>
-            <TextBox Text="{Binding Person.FirstName}"/>
-
+            <TextBox Text="{Binding UpdateSourceTrigger=PropertyChanged, Path=Person.FirstName, 
+                    ValidatesOnDataErrors=true, NotifyOnValidationError=true}" />
+            
             <Label Content="{x:Static resx:Resources.LastName}"/>
-            <TextBox Text="{Binding Person.LastName}"/>
+            <TextBox Text="{Binding Person.LastName, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"/>
 
             <Label Content="{x:Static resx:Resources.BirthDate}"/>
-            <DatePicker SelectedDate="{Binding Person.BirthDate}"/>
+            <DatePicker SelectedDate="{Binding Person.BirthDate, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"/>
 
             <Label Content="{x:Static resx:Resources.Gender}"/>
-            <ComboBox SelectedItem="{Binding Person.Gender}"
+            <ComboBox SelectedItem="{Binding Person.Gender, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"
                       ItemsSource="{Binding Source={StaticResource genderEnum}}"/>
 
             <Label Content="{x:Static resx:Resources.Specialization}"
                    Visibility="{Binding Person, Converter={converters:HasPropertyToVisibilityConverter PropertyName=Specialization}}"
                      />
-            <TextBox Text="{Binding Person.Specialization}"
+            <TextBox Text="{Binding Person.Specialization, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"
                      Visibility="{Binding Person, Converter={converters:HasPropertyToVisibilityConverter PropertyName=Specialization}}"
                      />
 

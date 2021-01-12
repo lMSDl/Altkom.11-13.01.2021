@@ -120,6 +120,9 @@
   <data name="Female" xml:space="preserve">
     <value>Kobieta</value>
   </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Imię</value>
+  </data>
   <data name="Male" xml:space="preserve">
     <value>Mężczyzna</value>
   </data>

@@ -70,6 +70,15 @@ namespace Models.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Imię.
+        /// </summary>
+        public static string FirstName {
+            get {
+                return ResourceManager.GetString("FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mężczyzna.
         /// </summary>
         public static string Male {
