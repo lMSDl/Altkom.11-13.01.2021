@@ -13,7 +13,7 @@ namespace Models.Validators
         {
             RuleFor(x => x.FirstName).NotEmpty().WithName(Properties.Resources.FirstName);
             RuleFor(x => x.LastName).NotEmpty();
-            RuleFor(x => x.BirthDate).LessThan(DateTime.Now).GreaterThan(new DateTime());
+            RuleFor(x => x.BirthDate).LessThan(DateTime.Now).GreaterThanOrEqualTo(new DateTime(1753, 1, 1));
 
             RuleFor(x => x.Gender).IsInEnum();
         }

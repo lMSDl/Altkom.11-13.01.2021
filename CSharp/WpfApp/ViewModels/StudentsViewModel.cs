@@ -1,5 +1,4 @@
-﻿using DAL.Services;
-using Models;
+﻿using Models;
 using Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -7,9 +6,9 @@ using System.Collections.ObjectModel;
 
 namespace WpfApp.ViewModels
 {
-    public class StudentsViewModel : PeopleViewModel<Student>
+    public class StudentsViewModel : PeopleViewModel<Student, ICrudService<Student>>
     {
-        protected override ICrudService<Student> Service => new DbCrudService<Student>();
+        protected override ICrudService<Student> Service => null;
 
         protected override Student CreatePerson()
         {

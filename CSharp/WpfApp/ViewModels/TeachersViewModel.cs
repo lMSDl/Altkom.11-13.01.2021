@@ -1,5 +1,5 @@
-﻿using DAL.Services;
-using Models;
+﻿using Models;
+using Services;
 using Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -13,9 +13,9 @@ using WpfApp.Views;
 
 namespace WpfApp.ViewModels
 {
-    public class TeachersViewModel : PeopleViewModel<Teacher>
+    public class TeachersViewModel : PeopleViewModel<Teacher, ITeachersService>
     {
-        protected override ICrudService<Teacher> Service => new DbTeachersService();
+        protected override ITeachersService Service => new TeachersService(Properties.Settings.Default.WebApi);
 
         protected override Teacher CreatePerson()
         {

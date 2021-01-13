@@ -12,9 +12,9 @@ using WpfApp.Views;
 
 namespace WpfApp.ViewModels
 {
-    public abstract class PeopleViewModel<T> where T : Person
+    public abstract class PeopleViewModel<T, TService> where T : Person where TService : ICrudService<T>
     {
-        protected abstract ICrudService<T> Service { get; }
+        protected abstract TService Service { get; }
 
         public PeopleViewModel()
         {
