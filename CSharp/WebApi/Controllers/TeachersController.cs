@@ -12,26 +12,14 @@ using System.Web.Http;
 namespace WebApi.Controllers
 {
     [RoutePrefix("api/teachers")]
-    public class TeachersController : ApiController
+    public class TeachersController : BaseApiController<Teacher, ITeachersService>
     {
-        private ITeachersService Service { get; } = new DbTeachersService();
+        protected override ITeachersService Service { get; } = new DbTeachersService();
 
-        public async Task<IHttpActionResult> Get([FromUri]string specialization = null)
+        public async Task<IHttpActionResult> Get([FromUri]string specialization)
         {
-            IEnumerable<Teacher> teachers;
-            if (specialization == null)
-                teachers = await Service.ReadAsync();
-            else
-                teachers = await Service.ReadBySpecializationAsync(specialization);
+            IEnumerable<Teacher> teachers = await Service.ReadBySpecializationAsync(specialization);
             return Ok(teachers);
-        }
-
-        public async Task<IHttpActionResult> Get(int id)
-        {
-            var teacher = await Service.ReadAsync(id);
-            if (teacher == null)
-                return NotFound();
-            return Ok(teacher);
         }
 
         [Route("{specialization:alpha}")]
@@ -40,35 +28,6 @@ namespace WebApi.Controllers
         {
             var teachers = await Service.ReadBySpecializationAsync(specialization);
             return Ok(teachers);
-        }
-
-        public async Task<IHttpActionResult> Post(Teacher teacher)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            teacher = await Service.CreateAsync(teacher);
-            return CreatedAtRoute("DefaultApi", new { controller = "teachers", id = teacher.Id }, teacher);
-        }
-
-        public async Task<IHttpActionResult> Put(int id, Teacher teacher)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            await Service.UpdateAsync(id, teacher);
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
-        public async Task<IHttpActionResult> Delete(int id)
-        {
-            //var teacher = await Service.ReadAsync(id);
-            //if (teacher == null)
-            //    return NotFound();
-            if (await Service.DeleteAsync(id))
-                return StatusCode(HttpStatusCode.NoContent);
-            else
-                return NotFound();
         }
     }
 }
