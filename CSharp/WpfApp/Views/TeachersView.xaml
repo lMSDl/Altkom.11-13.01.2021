@@ -21,6 +21,8 @@
             <Button Content="{x:Static prop:Resources.Delete}" Command="{Binding DeleteCommand}" />
             <Button Content="{x:Static prop:Resources.Add}" Command="{Binding AddCommand}"/>
             <Button Content="{x:Static prop:Resources.Edit}" Command="{Binding EditCommand}"/>
+            <Button Content="{x:Static prop:Resources.Import}" Command="{Binding ImportCommand}"/>
+            <Button Content="{x:Static prop:Resources.Export}" Command="{Binding ExportCommand}"/>
         </StackPanel>
         
     <DataGrid ItemsSource="{Binding People}"
