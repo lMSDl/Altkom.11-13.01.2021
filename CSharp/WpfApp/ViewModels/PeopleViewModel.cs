@@ -14,6 +14,7 @@ using System.Windows.Input;
 using WpfApp.Commands;
 using WpfApp.Views;
 using Newtonsoft.Json.Linq;
+using WpfApp.Encryption;
 
 namespace WpfApp.ViewModels
 {
@@ -55,7 +56,10 @@ namespace WpfApp.ViewModels
             switch (GetFileExtension(dialog.SafeFileName))
             {
                 case ".json":
+                    var encryptedBytes = new Encryptor("123123").Encrypt(json, "321321321");
+                    //var encryptedBytes = new AsymmetricEncryptor().Encrypt(json, "CN=localhost");
                     File.WriteAllText(dialog.FileName, json);
+                    File.WriteAllBytes(dialog.FileName, encryptedBytes);
                     //using (var streamWriter = new StreamWriter(dialog.FileName))
                     //{
                     //    await streamWriter.WriteLineAsync(json);
@@ -93,7 +97,9 @@ namespace WpfApp.ViewModels
             switch (GetFileExtension(dialog.SafeFileName))
             {
                 case ".json":
-                    var json = File.ReadAllText(dialog.FileName);
+                    var encryptedBytes = File.ReadAllBytes(dialog.FileName);
+                    var json = Encoding.Unicode.GetString(new Encryptor("123123123").Decrypt(encryptedBytes, "321321321"));
+                    //var json = Encoding.Unicode.GetString(new AsymmetricEncryptor().Decrypt(encryptedBytes, "CN=localhost"));
                     item = JsonConvert.DeserializeObject<T>(json);
                     break;
                 case ".xml":
