@@ -1,14 +1,16 @@
 ﻿using Models;
+using Services;
 using Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using WpfApp.Properties;
 
 namespace WpfApp.ViewModels
 {
     public class StudentsViewModel : PeopleViewModel<Student, ICrudService<Student>>
     {
-        protected override ICrudService<Student> Service => null;
+        protected override ICrudService<Student> Service => new CrudService<Student>(Settings.Default.WebApi, "/api/Students");
 
         protected override Student CreatePerson()
         {

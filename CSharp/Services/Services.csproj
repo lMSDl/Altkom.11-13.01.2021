@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CrudService.cs" />
     <Compile Include="TeachersService.cs" />
   </ItemGroup>
   <ItemGroup>
