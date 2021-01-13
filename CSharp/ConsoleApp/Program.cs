@@ -16,6 +16,14 @@ namespace ConsoleApp
             var example = new IndexerExample();
 
             example.Test();
+
+            //var calc = new ServiceReference1.CalculatorClient();
+            //var result =calc.Substract(1, 2);
+            //Console.WriteLine($"1 - 2 = {result}");
+
+            var teachers = new ServiceReference1.TeachersClient();
+            teachers.Read().ToList().ForEach(x => Console.WriteLine($"{x.FirstName} {x.LastName}"));
+
             Console.ReadKey();
         }
 
