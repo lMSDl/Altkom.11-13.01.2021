@@ -1,5 +1,6 @@
 ﻿using DAL.Configurations;
 using DAL.Migrations;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

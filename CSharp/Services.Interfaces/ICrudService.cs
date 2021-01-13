@@ -13,6 +13,6 @@ namespace Services.Interfaces
         Task<T> ReadAsync(int id);
         Task<IEnumerable<T>> ReadAsync();
         Task UpdateAsync(int id, T entity);
-        Task DeleteAsync(int id);
+        Task<bool> DeleteAsync(int id);
     }
 }

@@ -21,14 +21,17 @@ namespace DAL.Services
             }
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
             using (var context = new Context())
             {
                 var entity = await context.Set<T>().FindAsync(id);
+                if (entity == null)
+                    return false;
                 context.Set<T>().Remove(entity);
                 await context.SaveChangesAsync();
             }
+            return true;
         }
 
         public async Task<T> ReadAsync(int id)

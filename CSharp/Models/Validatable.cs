@@ -2,6 +2,7 @@
 using FluentValidation.Attributes;
 using FluentValidation.Internal;
 using FluentValidation.Results;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,10 @@ namespace Models
     public abstract class Validatable : IDataErrorInfo
     {
         private IValidator Validator => new AttributedValidatorFactory().GetValidator(GetType());
+        [JsonIgnore]
         public bool IsValid => Validator?.Validate(this).IsValid ?? true;
 
+        [JsonIgnore]
         public string Error => Validator != null ? GetErrors(Validator.Validate(this)) : string.Empty;
 
         private string GetErrors(ValidationResult validationResult)
